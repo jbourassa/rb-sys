@@ -9,7 +9,6 @@ description = "Rust bindings for the CRuby API"
 documentation = "https://docs.rs/rb-sys"
 homepage = "https://github.com/oxidize-rb/rb-sys"
 license = "MIT OR Apache-2.0"
-links = "rb"
 repository = "https://github.com/oxidize-rb/rb-sys"
 
 [build-dependencies]
