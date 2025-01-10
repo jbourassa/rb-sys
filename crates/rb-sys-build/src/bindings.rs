@@ -24,10 +24,10 @@ pub fn generate(
 
     let mut clang_args = vec![];
     if let Some(ruby_include_dir) = rbconfig.get("rubyhdrdir") {
-        clang_args.push(format!("-I{}", ruby_include_dir));
+        clang_args.push(format!("-iquote{}", ruby_include_dir));
     }
     if let Some(ruby_arch_include_dir) = rbconfig.get("rubyarchhdrdir") {
-        clang_args.push(format!("-I{}", ruby_arch_include_dir));
+        clang_args.push(format!("-iquote{}", ruby_arch_include_dir));
     }
 
     clang_args.extend(Build::default_cflags());

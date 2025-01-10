@@ -172,16 +172,16 @@ impl Build {
 fn get_include_args(rb: &rb_config::RbConfig) -> Vec<String> {
     let mut args = vec![];
     if let Some(include_dir) = rb.get("rubyhdrdir") {
-        args.push(format!("-I{}", include_dir));
+        args.push(format!("-iquote{}", include_dir));
     }
     if let Some(arch_include_dir) = rb.get("rubyarchhdrdir") {
-        args.push(format!("-I{}", arch_include_dir));
+        args.push(format!("-iquote{}", arch_include_dir));
     }
     if let Some(internal_include_dir) = rb.get("rubyhdrdir") {
-        args.push(format!("-I{}/include/internal", internal_include_dir));
+        args.push(format!("-iquote{}/include/internal", internal_include_dir));
     }
     if let Some(impl_include_dir) = rb.get("rubyhdrdir") {
-        args.push(format!("-I{}/include/impl", impl_include_dir));
+        args.push(format!("-iquote{}/include/impl", impl_include_dir));
     }
 
     args
